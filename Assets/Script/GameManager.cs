@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }//다른 스크립트에서 불러줄 함수
 
-    public int money;
+    public int gold;
     public int xp;//플레이어가 얻은 경험치
     public int level;//플레이어 레벨
     public float slime_size;//슬라임의 크기
@@ -28,13 +28,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Awake() {
+    /*private void Awake() {
         if(instance != null) {
             Destroy(this);
         } else {
             instance = this;
         }
-    }
+    }*/
 
     public void GameQuit(){
         Application.Quit();//Exit버튼 눌렀을때 게임 꺼짐
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void Save(){
         SaveData saveData = new SaveData();
 
-        saveData.money = money;
+        saveData.gold = gold;
         saveData.xp = xp;
         saveData.level = level;
         saveData.slime_size = slime_size;
@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         string path = Application.persistentDataPath + "/gamesave.xml";//기기를 파악하여 자동으로 위치를 잡아줌
         XmlManager.XmlSave<SaveData>(saveData, path);
         print(Application.persistentDataPath);
+        print("저장");
     }
 
     public void Load(){
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
 
         string path = Application.persistentDataPath + "/gamesave.xml";
         if (File.Exists(path) != true) {
-            money = 1000;
+            gold = 1000;
             xp = 0;
             level = 1;
             slime_size = 1;
@@ -66,10 +67,11 @@ public class GameManager : MonoBehaviour
         }
         saveData = XmlManager.XmlLoad<SaveData>(path);
 
-        money = saveData.money;
+        gold = saveData.gold;
         xp = saveData.xp;
         level = saveData.level;
         slime_size = saveData.slime_size;
+        print("불러오기");
     }
     /*불러올때 사용하는 함수
     string path = Application.persistentDataPath + "/save.xml";
@@ -86,6 +88,7 @@ public class GameManager : MonoBehaviour
         string path = Application.persistentDataPath + "/soundsave.xml";//기기를 파악하여 자동으로 위치를 잡아줌
         XmlManager.XmlSave<SaveData>(saveData, path);
         print(Application.persistentDataPath);
+        print("볼륨 저장");
     }
 
     public void SoundLoad() {
@@ -103,5 +106,6 @@ public class GameManager : MonoBehaviour
         SFX_value = saveData.SFX_value;
 
         print(Application.persistentDataPath);
+        print("볼륨 불러오기");
     }
 }

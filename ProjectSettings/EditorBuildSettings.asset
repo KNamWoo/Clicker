@@ -9,6 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: d218869736bdc9a40b57f6bff5fe1969
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/Home.unity
     guid: fb486eb832d54794abb5972f5caff0a8
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 3390f2928a4d9da44b8f4ec7e32269b6
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

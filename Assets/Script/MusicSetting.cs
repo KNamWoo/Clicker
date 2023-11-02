@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MusicSetting : GameManager
 {//Audio 관련 코드 : https://url.kr/e73cos
     // Start is called before the first frame update
-    public float B_value;
-    public float S_value;
+    public float SF_value;
 
     public AudioSource BGMAS;//BGMAudioSource
     public AudioSource SFXAS;
@@ -18,12 +18,11 @@ public class MusicSetting : GameManager
 
     private void Start()
     {
-        Load();
-        SoundLoad();
-
-        bgmVolSet.value = BGM_value;
-        sfxVolSet.value = SFX_value;
-        
+        if (SceneManager.GetActiveScene().buildIndex == 0) {
+            SoundLoad();
+            bgmVolSet.value = BGM_value;
+            sfxVolSet.value = SFX_value;
+        }
     }
 
     // Update is called once per frame
