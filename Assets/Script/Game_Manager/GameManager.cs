@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //public static MusicSaveManager instance { get; private set; }//other scripts function
 
     public int gold;
-    public int slime_size;
+    public int slime_lv;
     public int chair_lv;
     public int desk_lv;
     public int bed_lv;
@@ -19,9 +19,15 @@ public class GameManager : MonoBehaviour
     public float BGM_value;
     public float SFX_value;
 
+    public float increase_gold;
+
     //public MusicSetting ms;
 
     public static GameManager instance;
+
+    void Update(){
+        increase_gold = GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000;
+    }
 
     private void Awake() {
         if (instance == null) {
@@ -39,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame() {
         gold = 1000;
-        slime_size = 1;
+        slime_lv = 1;
         bed_lv = 0;
         tv_lv = 0;
         closet_lv = 0;
@@ -52,7 +58,7 @@ public class GameManager : MonoBehaviour
         SaveData saveData = new SaveData();
 
         saveData.gold = gold;
-        saveData.slime_size = slime_size;
+        saveData.slime_lv = slime_lv;
         saveData.bed_lv = bed_lv;
         saveData.tv_lv = tv_lv;
         saveData.closet_lv = closet_lv;
@@ -75,7 +81,7 @@ public class GameManager : MonoBehaviour
         saveData = XmlManager.XmlLoad<SaveData>(path);
 
         gold = saveData.gold;
-        slime_size = saveData.slime_size;
+        slime_lv = saveData.slime_lv;
         bed_lv = saveData.bed_lv;
         tv_lv = saveData.tv_lv;
         closet_lv = saveData.closet_lv;
