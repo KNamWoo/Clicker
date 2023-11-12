@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 107145559630346695}
   - component: {fileID: 6536850511971707018}
   - component: {fileID: 5709846927934186342}
-  - component: {fileID: 286367713583626790}
+  - component: {fileID: 3675142067502361076}
   m_Layer: 5
   m_Name: Upgrade_Button
   m_TagString: Untagged
@@ -201,7 +201,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 286367713583626790}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3675142067502361076}
         m_TargetAssemblyTypeName: Windows, Assembly-CSharp
         m_MethodName: Floating
         m_Mode: 1
@@ -211,9 +223,9 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &286367713583626790
+--- !u!114 &3675142067502361076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2860bf8d517e39446a9784f7764f927e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNumber: 3
+  SceneNumber: 2
 --- !u!1 &3514230786751933381
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +555,7 @@ GameObject:
   - component: {fileID: 1228955877669249184}
   - component: {fileID: 1038012969687610690}
   - component: {fileID: 4184589597518138963}
-  - component: {fileID: 6489939782469766077}
+  - component: {fileID: 1958458306761066875}
   m_Layer: 5
   m_Name: Item_Button
   m_TagString: Untagged
@@ -653,7 +665,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6489939782469766077}
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1958458306761066875}
         m_TargetAssemblyTypeName: Windows, Assembly-CSharp
         m_MethodName: Floating
         m_Mode: 1
@@ -665,7 +689,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &6489939782469766077
+--- !u!114 &1958458306761066875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -824,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2860bf8d517e39446a9784f7764f927e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNumber: 2
+  SceneNumber: 1
 --- !u!1 &6989717506665574056
 GameObject:
   m_ObjectHideFlags: 0

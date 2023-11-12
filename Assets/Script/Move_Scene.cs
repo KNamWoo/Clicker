@@ -1,25 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Move_Scene : MonoBehaviour
 {
-    public int SceneNumber;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //public int SceneNumber;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void homeload(){
+        LoadingSceneManager.LoadScene("Home");
     }
-
-    public void nextScene(){
-        SceneManager.LoadScene(SceneNumber);
+    public void dungeonload() {
+        LoadingSceneManager.LoadScene("Dungeon");
     }
 }

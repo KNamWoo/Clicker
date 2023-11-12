@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class Gold : MonoBehaviour
 {
-    int gold;
+    //int gold;
 
     public Text gold_text;
 
-    public GameManager gm;
+    //public SaveManager gm;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,8 @@ public class Gold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gold = gm.gold;
-
         if (SceneManager.GetActiveScene().buildIndex != 0) {
-            gold_text.text = "Gold : " + gold;
+            gold_text.text = "Gold : " + GameManager.instance.gold;
         }
     }
 }
