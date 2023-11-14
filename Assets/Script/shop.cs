@@ -10,6 +10,9 @@ public class shop : MonoBehaviour
     public Text bed_lv_text;
     public Text closet_lv_text;
     public Text tv_lv_text;
+    public Text Figure_Cu;//copper
+    public Text Figure_Ag;//silver
+    public Text Figure_Au;//gold
 
     void Update(){
         if(GameManager.instance.chair_lv >= 1){
@@ -35,6 +38,23 @@ public class shop : MonoBehaviour
         }
         if(GameManager.instance.tv_lv >= 1){
             tv_lv_text.text = "구매 완료";
+        }else{
+            tv_lv_text.text = "cost : 250000";
+        }
+        if(GameManager.instance.iscu >= 1){
+            Figure_Cu.text = "구매 완료";
+        }else{
+            Figure_Cu.text = "cost : 500000";
+        }
+        if(GameManager.instance.isag >= 1){
+            Figure_Ag.text = "구매 완료";
+        }else{
+            Figure_Ag.text = "cost : 1000000";
+        }
+        if(GameManager.instance.isau >= 1){
+            Figure_Au.text = "구매 완료";
+        }else{
+            Figure_Au.text = "cost : 5000000";
         }
     }
 
@@ -75,8 +95,36 @@ public class shop : MonoBehaviour
     }
 
     public void buy_tv(){
-        if(GameManager.instance.tv_lv < 1){
+        if(GameManager.instance.tv_lv < 1 && GameManager.instance.gold >= 250000){
             GameManager.instance.tv_lv = 1;
+            GameManager.instance.gold -= 250000;
+        }else{
+            print("tv 구매 불가");
+        }
+    }
+
+    public void buy_copper(){
+        if(GameManager.instance.iscu == 0 && GameManager.instance.gold >= 500000){
+            GameManager.instance.iscu = 1;
+            GameManager.instance.gold -= 500000;
+        }else{
+            print("tv 구매 불가");
+        }
+    }
+
+    public void buy_silver(){
+        if(GameManager.instance.isag == 0 && GameManager.instance.gold >= 1000000){
+            GameManager.instance.isag = 1;
+            GameManager.instance.gold -= 1000000;
+        }else{
+            print("tv 구매 불가");
+        }
+    }
+
+    public void buy_gold(){
+        if(GameManager.instance.isau == 0 && GameManager.instance.gold >= 5000000){
+            GameManager.instance.isau = 1;
+            GameManager.instance.gold -= 5000000;
         }else{
             print("tv 구매 불가");
         }

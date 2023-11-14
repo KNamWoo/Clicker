@@ -3,30 +3,46 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEditorInternal;
 
 public class GameManager : MonoBehaviour
 {
     //public static MusicSaveManager instance { get; private set; }//other scripts function
 
     public int gold;
+    public int gold_amount;
+    public int gold_lv;
+    public int gold_price;
     public int slime_lv;
     public int chair_lv;
     public int desk_lv;
     public int bed_lv;
     public int closet_lv;
     public int tv_lv;
+    public int iscu;//copper
+    public int isag;//silver
+    public int isau;//gold
 
     public float BGM_value;
     public float SFX_value;
 
     public float increase_gold;
+    public float figure_gold;
 
     //public MusicSetting ms;
 
     public static GameManager instance;
 
     void Update(){
-        increase_gold = GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000;
+        increase_gold = GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000 + GameManager.instance.tv_lv*50000;
+        figure_gold = GameManager.instance.iscu*250000 + GameManager.instance.isag*500000 + GameManager.instance.isau*2500000;
+
+        if(Input.GetMouseButtonDown(0)){
+            if (SceneManager.GetActiveScene().buildIndex == 2) {
+                gold += gold_amount;//1~9 : 1씩 상승, 10~19 : 2씩 상승, 20~29 : 3씩 상승
+            }
+        }
     }
 
     private void Awake() {
@@ -45,12 +61,18 @@ public class GameManager : MonoBehaviour
 
     public void NewGame() {
         gold = 1000;
+        gold_amount = 1;
+        gold_lv = 1;
+        gold_price = 100;
         slime_lv = 1;
         bed_lv = 0;
         tv_lv = 0;
         closet_lv = 0;
         chair_lv = 0;
         desk_lv = 0;
+        iscu = 0;
+        isag = 0;
+        isau = 0;
         Save();
     }
 
@@ -58,12 +80,18 @@ public class GameManager : MonoBehaviour
         SaveData saveData = new SaveData();
 
         saveData.gold = gold;
+        saveData.gold_amount = gold_amount;
+        saveData.gold_lv = gold_lv;
+        saveData.gold_price = gold_price;
         saveData.slime_lv = slime_lv;
         saveData.bed_lv = bed_lv;
         saveData.tv_lv = tv_lv;
         saveData.closet_lv = closet_lv;
         saveData.chair_lv = chair_lv;
         saveData.desk_lv = desk_lv;
+        saveData.iscu = iscu;
+        saveData.isag = isag;
+        saveData.isau = isau;
 
         string path = Application.persistentDataPath + "/gamesave.xml";
         XmlManager.XmlSave<SaveData>(saveData, path);
@@ -81,12 +109,18 @@ public class GameManager : MonoBehaviour
         saveData = XmlManager.XmlLoad<SaveData>(path);
 
         gold = saveData.gold;
+        gold_amount = saveData.gold_amount;
+        gold_lv = saveData.gold_lv;
+        gold_price = saveData.gold_price;
         slime_lv = saveData.slime_lv;
         bed_lv = saveData.bed_lv;
         tv_lv = saveData.tv_lv;
         closet_lv = saveData.closet_lv;
         chair_lv = saveData.chair_lv;
         desk_lv = saveData.desk_lv;
+        iscu = saveData.iscu;
+        isag = saveData.isag;
+        isau = saveData.isau;
         print("load");
     }
     /*
