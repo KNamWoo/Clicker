@@ -28,4 +28,8 @@ public class earn : MonoBehaviour
         yield return new WaitForSeconds(getTime);
         StartCoroutine(FigureGetGold(30));
     }
+
+    public void Click_earn(){
+        GameManager.instance.gold += GameManager.instance.gold_amount;
+    }
 }

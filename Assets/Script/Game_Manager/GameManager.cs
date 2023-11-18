@@ -38,11 +38,11 @@ public class GameManager : MonoBehaviour
         increase_gold = GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000 + GameManager.instance.tv_lv*50000;
         figure_gold = GameManager.instance.iscu*250000 + GameManager.instance.isag*500000 + GameManager.instance.isau*2500000;
 
-        if(Input.GetMouseButtonDown(0)){
+        /*if(Input.GetMouseButtonDown(0)){
             if (SceneManager.GetActiveScene().buildIndex == 2) {
                 gold += gold_amount;//1~9 : 1씩 상승, 10~19 : 2씩 상승, 20~29 : 3씩 상승
             }
-        }
+        }*/
     }
 
     private void Awake() {
