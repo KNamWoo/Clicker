@@ -12,7 +12,7 @@ public class Home_Upgrade : MonoBehaviour
     int closet_price = 50000;
     int tv_price = 250000;
 
-    public Text slime_lv_text;
+    //public Text slime_lv_text;
     public Text gold_lv_text;
     public Text chair_lv_text;
     public Text desk_lv_text;
@@ -23,7 +23,7 @@ public class Home_Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slime_lv_text.text = "lv : " + GameManager.instance.slime_lv;
+        //slime_lv_text.text = "lv : " + GameManager.instance.slime_lv;
 
         gold_lv_text.text = "lv : " + GameManager.instance.gold_lv + "\ncost : " + GameManager.instance.gold_price;
 

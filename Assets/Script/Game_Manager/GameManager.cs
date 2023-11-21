@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public int bonusCount;
     public int pet_lv;
     public int pet_price;
+    public int slime_price;
+    public int slime_upg_price;
     public int mob_gold;
 
     public float BGM_value;
@@ -40,6 +42,10 @@ public class GameManager : MonoBehaviour
     //public MusicSetting ms;
 
     public static GameManager instance;
+
+    void Start(){
+        mobHP = new double[5];
+    }
 
     void Update(){
         increase_gold = GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000 + GameManager.instance.tv_lv*50000;
@@ -85,6 +91,8 @@ public class GameManager : MonoBehaviour
         mobCount2 = 0;
         pet_lv = 0;
         pet_price = 2500;
+        slime_price = 100;
+        slime_upg_price = 20;
         mobHP[0] = 100;
         mobHP[1] = 100;
         mobHP[2] = 100;
@@ -117,6 +125,8 @@ public class GameManager : MonoBehaviour
         saveData.mobHP = mobHP;
         saveData.pet_lv = pet_lv;
         saveData.pet_price = pet_price;
+        saveData.slime_price = slime_price;
+        saveData.slime_upg_price = slime_upg_price;
         saveData.bonusCount = bonusCount;
         saveData.mob_gold = mob_gold;
 
@@ -154,6 +164,8 @@ public class GameManager : MonoBehaviour
         mobHP = saveData.mobHP;
         pet_lv = saveData.pet_lv;
         pet_price = saveData.pet_price;
+        slime_price = saveData.slime_price;
+        slime_upg_price = saveData.slime_upg_price;
         bonusCount = saveData.bonusCount;
         mob_gold = saveData.mob_gold;
         print("load");

@@ -15,9 +15,11 @@ public class SaveData{//저장할 변수들
     public int isag;//silver
     public int isau;//gold
     public int mobCount1, mobCount2;
-    public double[] mobHP = {0, 0, 0, 0, 0};
+    public double[] mobHP;
     public int bonusCount;
     public int pet_lv;
     public int pet_price;
+    public int slime_price;
+    public int slime_upg_price;//슬라임 업글비용증가량
     public int mob_gold;
 }

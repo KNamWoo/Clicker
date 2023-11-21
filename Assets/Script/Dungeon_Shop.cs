@@ -20,12 +20,12 @@ public class Dungeon_Shop : MonoBehaviour
         if(GameManager.instance.pet_lv >= 1){
             pet_lv_text.text = "구매 완료";
         }else{
-            pet_lv_text.text = "cost : 5";
+            pet_lv_text.text = "cost : 2500";
         }
     }
 
     public void buy_pet(){
-        if(GameManager.instance.pet_lv < 1 && GameManager.instance.gold <= 2500){
+        if(GameManager.instance.pet_lv < 1 && GameManager.instance.gold >= 2500){
             GameManager.instance.pet_lv = 1;
             GameManager.instance.gold -= 2500;
         }
