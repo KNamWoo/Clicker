@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class shop : MonoBehaviour
+public class Home_Shop : MonoBehaviour
 {
     public Text chair_lv_text;
     public Text desk_lv_text;

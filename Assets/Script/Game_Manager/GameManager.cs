@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int gold_lv;
     public int gold_price;
     public int slime_lv;
+    public double slime_size;
     public int chair_lv;
     public int desk_lv;
     public int bed_lv;
@@ -23,6 +24,12 @@ public class GameManager : MonoBehaviour
     public int iscu;//copper
     public int isag;//silver
     public int isau;//gold
+    public int mobCount1, mobCount2;
+    public double mobHP1, mobHP2, mobHP3, mobHP4, mobHP5;
+    public int bonusCount;
+    public int pet_lv;
+    public int pet_price;
+    public int mob_gold;
 
     public float BGM_value;
     public float SFX_value;
@@ -65,6 +72,7 @@ public class GameManager : MonoBehaviour
         gold_lv = 1;
         gold_price = 100;
         slime_lv = 1;
+        slime_size = 1;
         bed_lv = 0;
         tv_lv = 0;
         closet_lv = 0;
@@ -73,6 +81,17 @@ public class GameManager : MonoBehaviour
         iscu = 0;
         isag = 0;
         isau = 0;
+        mobCount1 = 0;
+        mobCount2 = 0;
+        pet_lv = 0;
+        pet_price = 2500;
+        mobHP1 = 100;
+        mobHP2 = 100;
+        mobHP3 = 100;
+        mobHP4 = 100;
+        mobHP5 = 100;
+        bonusCount = 0;
+        mob_gold = 50;
         Save();
     }
 
@@ -84,6 +103,7 @@ public class GameManager : MonoBehaviour
         saveData.gold_lv = gold_lv;
         saveData.gold_price = gold_price;
         saveData.slime_lv = slime_lv;
+        saveData.slime_size = slime_size;
         saveData.bed_lv = bed_lv;
         saveData.tv_lv = tv_lv;
         saveData.closet_lv = closet_lv;
@@ -92,6 +112,17 @@ public class GameManager : MonoBehaviour
         saveData.iscu = iscu;
         saveData.isag = isag;
         saveData.isau = isau;
+        saveData.mobCount1 = mobCount1;
+        saveData.mobCount2 = mobCount2;
+        saveData.mobHP1 = mobHP1;
+        saveData.mobHP2 = mobHP2;
+        saveData.mobHP3 = mobHP3;
+        saveData.mobHP4 = mobHP4;
+        saveData.mobHP5 = mobHP5;
+        saveData.pet_lv = pet_lv;
+        saveData.pet_price = pet_price;
+        saveData.bonusCount = bonusCount;
+        saveData.mob_gold = mob_gold;
 
         string path = Application.persistentDataPath + "/gamesave.xml";
         XmlManager.XmlSave<SaveData>(saveData, path);
@@ -113,6 +144,7 @@ public class GameManager : MonoBehaviour
         gold_lv = saveData.gold_lv;
         gold_price = saveData.gold_price;
         slime_lv = saveData.slime_lv;
+        slime_size = saveData.slime_size;
         bed_lv = saveData.bed_lv;
         tv_lv = saveData.tv_lv;
         closet_lv = saveData.closet_lv;
@@ -121,6 +153,17 @@ public class GameManager : MonoBehaviour
         iscu = saveData.iscu;
         isag = saveData.isag;
         isau = saveData.isau;
+        mobCount1 = saveData.mobCount1;
+        mobCount2 = saveData.mobCount2;
+        mobHP1 = saveData.mobHP1;
+        mobHP2 = saveData.mobHP2;
+        mobHP3 = saveData.mobHP3;
+        mobHP4 = saveData.mobHP4;
+        mobHP5 = saveData.mobHP5;
+        pet_lv = saveData.pet_lv;
+        pet_price = saveData.pet_price;
+        bonusCount = saveData.bonusCount;
+        mob_gold = saveData.mob_gold;
         print("load");
     }
     /*

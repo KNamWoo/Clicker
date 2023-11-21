@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Upgrade : MonoBehaviour
+public class Home_Upgrade : MonoBehaviour
 {
     int gold_price = 100;
     int chair_price = 5;
