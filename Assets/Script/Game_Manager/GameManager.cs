@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public int isag;//silver
     public int isau;//gold
     public int mobCount1, mobCount2;
-    public double mobHP1, mobHP2, mobHP3, mobHP4, mobHP5;
+    public double[] mobHP;
     public int bonusCount;
     public int pet_lv;
     public int pet_price;
@@ -85,11 +85,11 @@ public class GameManager : MonoBehaviour
         mobCount2 = 0;
         pet_lv = 0;
         pet_price = 2500;
-        mobHP1 = 100;
-        mobHP2 = 100;
-        mobHP3 = 100;
-        mobHP4 = 100;
-        mobHP5 = 100;
+        mobHP[0] = 100;
+        mobHP[1] = 100;
+        mobHP[2] = 100;
+        mobHP[3] = 100;
+        mobHP[4] = 100;
         bonusCount = 0;
         mob_gold = 50;
         Save();
@@ -114,11 +114,7 @@ public class GameManager : MonoBehaviour
         saveData.isau = isau;
         saveData.mobCount1 = mobCount1;
         saveData.mobCount2 = mobCount2;
-        saveData.mobHP1 = mobHP1;
-        saveData.mobHP2 = mobHP2;
-        saveData.mobHP3 = mobHP3;
-        saveData.mobHP4 = mobHP4;
-        saveData.mobHP5 = mobHP5;
+        saveData.mobHP = mobHP;
         saveData.pet_lv = pet_lv;
         saveData.pet_price = pet_price;
         saveData.bonusCount = bonusCount;
@@ -155,11 +151,7 @@ public class GameManager : MonoBehaviour
         isau = saveData.isau;
         mobCount1 = saveData.mobCount1;
         mobCount2 = saveData.mobCount2;
-        mobHP1 = saveData.mobHP1;
-        mobHP2 = saveData.mobHP2;
-        mobHP3 = saveData.mobHP3;
-        mobHP4 = saveData.mobHP4;
-        mobHP5 = saveData.mobHP5;
+        mobHP = saveData.mobHP;
         pet_lv = saveData.pet_lv;
         pet_price = saveData.pet_price;
         bonusCount = saveData.bonusCount;

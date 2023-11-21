@@ -15,7 +15,7 @@ public class SaveData{//저장할 변수들
     public int isag;//silver
     public int isau;//gold
     public int mobCount1, mobCount2;
-    public double mobHP1, mobHP2, mobHP3, mobHP4, mobHP5;
+    public double[] mobHP = {0, 0, 0, 0, 0};
     public int bonusCount;
     public int pet_lv;
     public int pet_price;
