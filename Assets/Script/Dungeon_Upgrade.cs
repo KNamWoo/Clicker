@@ -56,6 +56,6 @@ public class Dungeon_Upgrade : MonoBehaviour
             }
         }else{
             print("돈이 부족함");
-        }
+        }//print
     }
 }
