@@ -14,30 +14,44 @@ public class Home_Shop : MonoBehaviour
     public Text Figure_Ag;//silver
     public Text Figure_Au;//gold
 
+    public GameObject chair;
+    public GameObject desk;
+    public GameObject bed;
+    public GameObject closet;
+    public GameObject tv;
+    public GameObject fiCu;
+    public GameObject fiAg;
+    public GameObject fiAu;
+
     void Update(){
         if(GameManager.instance.chair_lv >= 1){
             chair_lv_text.text = "구매 완료";
+            chair.SetActive(true);
         }else{
             chair_lv_text.text = "cost : 5";
         }
 
         if(GameManager.instance.desk_lv >= 1){
             desk_lv_text.text = "구매 완료";
+            desk.SetActive(true);
         }else{
             desk_lv_text.text = "cost : 50";
         }
         if(GameManager.instance.bed_lv >= 1){
             bed_lv_text.text = "구매 완료";
+            bed.SetActive(true);
         }else{
             bed_lv_text.text = "cost : 5000";
         }
         if(GameManager.instance.closet_lv >= 1){
             closet_lv_text.text = "구매 완료";
+            closet.SetActive(true);
         }else{
             closet_lv_text.text = "cost : 50000";
         }
         if(GameManager.instance.tv_lv >= 1){
             tv_lv_text.text = "구매 완료";
+            tv.SetActive(true);
         }else{
             tv_lv_text.text = "cost : 250000";
         }

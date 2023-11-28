@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Home_Upgrade : MonoBehaviour
 {
-    int gold_price = 100;
     int chair_price = 5;
     int desk_price = 50;
     int bed_price = 5000;

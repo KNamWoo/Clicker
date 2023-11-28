@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class earn : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GetGold(3));//3초에 한번 실행
-        StartCoroutine(FigureGetGold(30));
+        if (SceneManager.GetActiveScene().buildIndex == 2){
+            StartCoroutine(GetGold(3));//3초에 한번 실행
+            StartCoroutine(FigureGetGold(30));
+        }
     }
 
     // Update is called once per frame
