@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 using UnityEngine.UI;
 
 public class Gold : MonoBehaviour
 {
     //int gold;
 
-    public Text gold_text;
+    public TextMeshProUGUI gold_text;
 
     //public SaveManager gm;
 
@@ -22,7 +23,7 @@ public class Gold : MonoBehaviour
     void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0) {
-            gold_text.text = "Gold : " + GameManager.instance.gold;
+            gold_text.text = "" + GameManager.instance.gold;
         }
     }
 }

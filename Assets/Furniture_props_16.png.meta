@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: afd793b1787964e44aa4ce39e16e5bcf
+guid: 8a5a850cd095b524ab5a55c9b92096d8
 AssetOrigin:
   serializedVersion: 1
-  productId: 245855
-  packageName: The Legend of Slim
+  productId: 234762
+  packageName: 2D-Basic-Room-Assets
   packageVersion: 1.0
-  assetPath: Assets/The Legend of Slim/01 Original/Blue/01.png
-  uploadId: 569268
+  assetPath: Assets/Furniture_pixel_art_assets/Prefabs/Furniture_props/Furniture_props_16.png
+  uploadId: 531257
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -41,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -76,9 +76,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -88,9 +88,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,9 +100,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -114,13 +114,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 01_0
+      name: Furniture_props_16_0
       rect:
         serializedVersion: 2
-        x: 176
-        y: 310
-        width: 605
-        height: 345
+        x: 8
+        y: 12
+        width: 10
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03413152f7504364195b471518ca20c4
-      internalID: -1588015061
+      spriteID: 80f8ebec36f3c08438a9fe5c91c68b97
+      internalID: 955520005
       vertices: []
       indices: 
       edges: []
@@ -138,14 +138,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      01_0: -1588015061
+      Furniture_props_16_0: 955520005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

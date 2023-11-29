@@ -46,6 +46,6 @@ public class LoadingSceneManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        progressText.text = string.Format("{0:N1}",progressBar.fillAmount*100)+"%";//N의 오른쪽 자릿수까지 잘라 출력하기
+        progressText.text = string.Format("{0:N1}",progressBar.fillAmount*100)+"%";
     }
 }

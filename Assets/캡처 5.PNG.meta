@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-guid: afd793b1787964e44aa4ce39e16e5bcf
-AssetOrigin:
-  serializedVersion: 1
-  productId: 245855
-  packageName: The Legend of Slim
-  packageVersion: 1.0
-  assetPath: Assets/The Legend of Slim/01 Original/Blue/01.png
-  uploadId: 569268
+guid: 336df0c6bd01c7944a56a661aa8ccec8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2004828724619898831
+    second: "\uCEA1\uCC98 5_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -72,7 +68,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -114,22 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 01_0
+      name: "\uCEA1\uCC98 5_0"
       rect:
         serializedVersion: 2
-        x: 176
-        y: 310
-        width: 605
-        height: 345
+        x: 0
+        y: 0
+        width: 81
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 03413152f7504364195b471518ca20c4
-      internalID: -1588015061
+      spriteID: 1301881a5ea6d24e0800000000000000
+      internalID: -2004828724619898831
       vertices: []
       indices: 
       edges: []
@@ -137,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      01_0: -1588015061
+      "\uCEA1\uCC98 5_0": -2004828724619898831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
