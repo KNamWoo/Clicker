@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,6 +56,13 @@ public class GameManager : MonoBehaviour
                 gold += gold_amount;//1~9 : 1씩 상승, 10~19 : 2씩 상승, 20~29 : 3씩 상승
             }
         }*/
+
+        if(Application.platform == RuntimePlatform.Android){
+            if(Input.GetKey(KeyCode.Escape)){
+                Save();
+                GameQuit();
+            }
+        }
     }
 
     private void Awake() {

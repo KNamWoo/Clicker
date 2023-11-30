@@ -12,6 +12,8 @@ public class MobMove : MonoBehaviour
     public GameObject mobobj;
     Animator animator;
 
+    //public static MobMove mobmv;
+
     //private Rigidbody2D rBody2D;
 
     // Start is called before the first frame update
@@ -28,6 +30,12 @@ public class MobMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if (mobmv == null) {
+            mobmv = this;
+        }else if(mobmv != this) {
+            Destroy(gameObject);
+        }*/
+
         if(movePos == true && hitis == false){
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         }else if(movePos == false && hitis == true){
@@ -49,6 +57,11 @@ public class MobMove : MonoBehaviour
             StartCoroutine(hitCoolTime(0.1f));
             Mob.enemy.HP -= Mob.enemy.slimeStr;
         }
+
+        if(collision.gameObject.tag == "pet"){
+            StartCoroutine(petHit(1f));
+            Mob.enemy.HP -= Mob.enemy.petStr;
+        }
     }
 
     IEnumerator hitCoolTime (float cool){
@@ -57,6 +70,24 @@ public class MobMove : MonoBehaviour
         hitis = true;
         animator.SetBool("hit",true);
         animator.SetBool("dead",false);
+        while(cool > 0.00f){
+            cool -= Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        movePos = true;
+        hitis = false;
+        animator.SetBool("hit",false);
+        animator.SetBool("dead",false);
+    }
+
+    IEnumerator petHit (float cool){
+        print("쿨");
+        movePos = false;
+        hitis = true;
+        Pet.pet.hit();
+        animator.SetBool("hit",true);
+        animator.SetBool("dead",false);
+        transform.Translate(backspeed * Time.deltaTime, 0, 0);
         while(cool > 0.00f){
             cool -= Time.deltaTime;
             yield return new WaitForFixedUpdate();

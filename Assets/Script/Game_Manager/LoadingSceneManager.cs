@@ -9,7 +9,7 @@ using UnityEngine.Analytics;
 public class LoadingSceneManager : MonoBehaviour {
     public static string nextScene;
     [SerializeField] Image progressBar;
-    public TextMeshProUGUI progressText;
+    public Text progressText;
 
     // Start is called before the first frame update
     private void Start() {

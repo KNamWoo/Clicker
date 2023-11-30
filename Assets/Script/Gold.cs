@@ -9,7 +9,8 @@ public class Gold : MonoBehaviour
 {
     //int gold;
 
-    public TextMeshProUGUI gold_text;
+    public Text gold_text;
+    public Text slime_text;
 
     //public SaveManager gm;
 
@@ -24,6 +25,7 @@ public class Gold : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex != 0) {
             gold_text.text = "" + GameManager.instance.gold;
+            slime_text.text = "size : " + GameManager.instance.slime_size;
         }
     }
 }
