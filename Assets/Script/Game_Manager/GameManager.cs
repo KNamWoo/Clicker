@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     void Start(){
         mobHP = new double[5];
+        Load();
     }
 
     void Update(){

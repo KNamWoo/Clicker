@@ -57,16 +57,19 @@ public class Home_Shop : MonoBehaviour
         }
         if(GameManager.instance.iscu >= 1){
             Figure_Cu.text = "구매 완료";
+            fiCu.SetActive(true);
         }else{
             Figure_Cu.text = "cost : 500000";
         }
         if(GameManager.instance.isag >= 1){
             Figure_Ag.text = "구매 완료";
+            fiAg.SetActive(true);
         }else{
             Figure_Ag.text = "cost : 1000000";
         }
         if(GameManager.instance.isau >= 1){
             Figure_Au.text = "구매 완료";
+            fiAu.SetActive(true);
         }else{
             Figure_Au.text = "cost : 5000000";
         }
