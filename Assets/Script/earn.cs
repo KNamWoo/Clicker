@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.SceneManagement;
 
 public class earn : MonoBehaviour
@@ -22,6 +23,10 @@ public class earn : MonoBehaviour
 
     IEnumerator GetGold(float delayTime){
         GameManager.instance.gold += GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000 + GameManager.instance.tv_lv*50000;
+        MusicSetting.muse.SFXAS.clip = MusicSetting.muse.coin_sfx;
+        if(GameManager.instance.chair_lv + GameManager.instance.desk_lv*10 + GameManager.instance.bed_lv*100 + GameManager.instance.closet_lv*1000 + GameManager.instance.tv_lv*50000 > 0){
+            MusicSetting.muse.SFXAS.Play();
+        }
         yield return new WaitForSeconds(delayTime);
         StartCoroutine(GetGold(3));
     }
@@ -34,5 +39,7 @@ public class earn : MonoBehaviour
 
     public void Click_earn(){
         GameManager.instance.gold += GameManager.instance.gold_amount;
+        MusicSetting.muse.SFXAS.clip = MusicSetting.muse.coin_sfx;
+        MusicSetting.muse.SFXAS.Play();
     }
 }

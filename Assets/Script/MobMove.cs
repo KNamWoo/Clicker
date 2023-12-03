@@ -47,6 +47,7 @@ public class MobMove : MonoBehaviour
 
         if(Mob.enemy.HP <= 0){
             Destroy(mobobj);
+            SlimeAni.slan.attack = false;
             StartCoroutine(deadCoolTime(0.01f));
             Mob.enemy.kill_mob();
         }
@@ -65,7 +66,9 @@ public class MobMove : MonoBehaviour
     }
 
     IEnumerator hitCoolTime (float cool){
-        print("쿨");
+        MusicSetting.muse.SFXAS.clip = MusicSetting.muse.attack_sfx;
+        MusicSetting.muse.SFXAS.Play();
+        SlimeAni.slan.attack = true;
         movePos = false;
         hitis = true;
         animator.SetBool("hit",true);
@@ -74,14 +77,16 @@ public class MobMove : MonoBehaviour
             cool -= Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
+        SlimeAni.slan.attack = false;
         movePos = true;
         hitis = false;
         animator.SetBool("hit",false);
         animator.SetBool("dead",false);
+        SlimeAni.slan.attack = false;
     }
 
     IEnumerator petHit (float cool){
-        print("쿨");
+        MusicSetting.muse.SFXAS.clip = MusicSetting.muse.attack_sfx;
         movePos = false;
         hitis = true;
         Pet.pet.hit();
@@ -99,7 +104,6 @@ public class MobMove : MonoBehaviour
     }
     
     IEnumerator deadCoolTime (float cool){
-        print("쿨");
         movePos = false;
         animator.SetBool("hit",false);
         animator.SetBool("dead",true);

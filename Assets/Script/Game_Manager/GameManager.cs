@@ -59,10 +59,14 @@ public class GameManager : MonoBehaviour
         }*/
 
         if(Application.platform == RuntimePlatform.Android){
-            if(Input.GetKey(KeyCode.Escape)){
+            if(Input.GetKey(KeyCode.Escape)){//뒤로가기
                 Save();
                 GameQuit();
             }
+
+            if(Input.GetKey(KeyCode.Home)){}//홈버튼
+
+            if(Input.GetKey(KeyCode.Menu)){}//최근 앱 버튼
         }
     }
 

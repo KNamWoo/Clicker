@@ -71,6 +71,8 @@ public class Mob : MonoBehaviour
     public void kill_mob(){
         GameManager.instance.mobCount2 = GameManager.instance.mobCount2 + 1;
         GameManager.instance.gold += GameManager.instance.mob_gold;
+        MusicSetting.muse.SFXAS.clip = MusicSetting.muse.coin_sfx;
+        MusicSetting.muse.SFXAS.Play();
     }
 
     public void spawn_Mob(){
